@@ -8,6 +8,7 @@ public class Restaurante {
     Hora hora;
 
     public Restaurante() {
+        hora = new Hora(9, 21);
         cola = new Cola();
         cajas = new Caja[NUMERO_DE_CAJAS];
         for (int index = 0; index < cajas.length; index++) {
@@ -16,12 +17,23 @@ public class Restaurante {
     }
 
     public void abrir() {
+        Utilidades.limpiarConsola();
         do {
+            imprimirEstado();
             llegarPersona();
             pasarPersona();
             atender();
             hora.avanzar();
         } while (estaAbierto());
+    }
+
+    private void imprimirEstado() {
+        cola.mostrar();
+        for (Caja caja : cajas) {
+            caja.mostrar();
+        }
+        hora.mostrar();
+        Utilidades.divisor("-");
     }
 
     private void pasarPersona() {
@@ -48,7 +60,7 @@ public class Restaurante {
     }
 
     private boolean estaAbierto() {
-        return hora.cerrado();
+        return !hora.terminado();
     }
 
 }

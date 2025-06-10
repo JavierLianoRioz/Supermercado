@@ -9,12 +9,16 @@ public class Hora {
         this.termina = termina;
     }
 
-    public boolean cerrado() {
+    public boolean terminado() {
         return hora >= termina;
     }
 
     public void avanzar() {
         hora++;
+    }
+
+    public void mostrar() {
+        System.out.println("Hora actual: " + hora + ":00, cierra a las " + termina + ":00");
     }
 
 }
