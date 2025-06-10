@@ -29,6 +29,7 @@ public class Restaurante {
             for (Caja caja : cajas) {
                 if (caja.vacia()) {
                     cola.sacar(caja);
+                    caja.pasar();
                     return;
                 }
             }

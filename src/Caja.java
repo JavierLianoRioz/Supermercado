@@ -12,4 +12,8 @@ public class Caja {
         paquetes = cantidad;
     }
 
+    public void pasar() {
+        ocupada = true;
+    }
+
 }
