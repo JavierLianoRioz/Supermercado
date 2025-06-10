@@ -1,19 +1,18 @@
 
 public class Cola {
 
+    private int cantidad;
+
     public boolean vacia() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'vacia'");
+        return cantidad == 0;
     }
 
     public void sacar(Caja caja) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'sacar'");
+        cantidad--;
     }
 
     public void poner() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'poner'");
+        cantidad++;
     }
 
 }
