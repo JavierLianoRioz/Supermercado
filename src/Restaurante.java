@@ -20,6 +20,7 @@ public class Restaurante {
             llegarPersona();
             pasarPersona();
             atender();
+            hora.avanzar();
         } while (estaAbierto());
     }
 
