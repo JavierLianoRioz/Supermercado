@@ -6,7 +6,7 @@ public class Utilidades {
         return new Random().nextDouble();
     }
 
-    public static Object aleatorioEntre(int[] rango) {
+    public static int aleatorioEntre(int[] rango) {
         return new Random().nextInt(rango[1] - rango[0] + 1) + rango[0];
     }
 
