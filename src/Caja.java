@@ -1,14 +1,15 @@
 
 public class Caja {
 
+    private boolean ocupada;
+    private int paquetes;
+
     public boolean vacia() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'vacia'");
+        return !ocupada;
     }
 
-    public void añadirCajas(Object aleatorioEntre) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'añadirCajas'");
+    public void añadirPaquetes(int cantidad) {
+        paquetes = cantidad;
     }
 
 }

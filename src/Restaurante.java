@@ -42,7 +42,7 @@ public class Restaurante {
     private void atender() {
         final int[] RANGO_PAQUETES = {5, 15};
         for (Caja caja : cajas) {
-            if (!caja.vacia()) caja.añadirCajas(Utilidades.aleatorioEntre(RANGO_PAQUETES));
+            if (!caja.vacia()) caja.añadirPaquetes(Utilidades.aleatorioEntre(RANGO_PAQUETES));
         }
     }
 
