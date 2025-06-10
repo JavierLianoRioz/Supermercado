@@ -1,14 +1,13 @@
+import java.util.Random;
 
 public class Utilidades {
 
-    public static int numeroAleatorio() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'numeroAleatorio'");
+    public static double doubleAleatorio() {
+        return new Random().nextDouble();
     }
 
-    public static Object aleatorioEntre(int[] rANGO_PAQUETES) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'aleatorioEntre'");
+    public static Object aleatorioEntre(int[] rango) {
+        return new Random().nextInt(rango[1] - rango[0] + 1) + rango[0];
     }
 
 }

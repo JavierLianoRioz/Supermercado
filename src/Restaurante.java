@@ -36,7 +36,7 @@ public class Restaurante {
     }
 
     private void llegarPersona() {
-        if (Utilidades.numeroAleatorio() > PROBABILIDAD_DE_QUE_LLEGUE_ALGUIEN) cola.poner();
+        if (Utilidades.doubleAleatorio() > PROBABILIDAD_DE_QUE_LLEGUE_ALGUIEN) cola.poner();
     }
 
     private void atender() {
