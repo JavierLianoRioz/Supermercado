@@ -18,8 +18,8 @@ public class Cola {
     }
 
     public void mostrar() {
-        String mensaje = "Cola:";
-        if (vacia()) mensaje += "vacía"; else (PERSONA_EMOJI+SPACE).repeat(cantidad);
+        String mensaje = "Cola:" + SPACE;
+        if (vacia()) mensaje += "vacía"; else mensaje += (PERSONA_EMOJI+SPACE).repeat(cantidad);
         System.out.println(mensaje);
     }
 

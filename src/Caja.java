@@ -22,4 +22,14 @@ public class Caja {
         System.out.println("Caja " + (ocupada ? "ocupada" : "libre") + ", paquetes: " + (PAQUETES_EMOJI+SPACE).repeat(paquetes));
     }
 
+    public void atender() {
+        if (ocupada) {
+            paquetes--;
+            if (paquetes <= 0) {
+                ocupada = false;
+                paquetes = 0;
+            }
+        }
+    }
+
 }

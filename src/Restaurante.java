@@ -25,6 +25,7 @@ public class Restaurante {
             atender();
             hora.avanzar();
         } while (estaAbierto());
+        imprimirEstado();
     }
 
     private void imprimirEstado() {
@@ -37,11 +38,13 @@ public class Restaurante {
     }
 
     private void pasarPersona() {
+        final int[] RANGO_PAQUETES = {5, 15};
         if (!cola.vacia()) {
             for (Caja caja : cajas) {
                 if (caja.vacia()) {
                     cola.sacar(caja);
                     caja.pasar();
+                    caja.añadirPaquetes(Utilidades.aleatorioEntre(RANGO_PAQUETES));
                     return;
                 }
             }
@@ -53,9 +56,8 @@ public class Restaurante {
     }
 
     private void atender() {
-        final int[] RANGO_PAQUETES = {5, 15};
         for (Caja caja : cajas) {
-            if (!caja.vacia()) caja.añadirPaquetes(Utilidades.aleatorioEntre(RANGO_PAQUETES));
+            caja.atender();
         }
     }
 
