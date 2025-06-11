@@ -1,0 +1,82 @@
+classDiagram
+    direction LR
+
+    subgraph Simulación
+        class Simulador {
+            - supermercado: Supermercado
+            - hora: Hora
+            + Simulador(horaInicio: int, horaFin: int)
+            + iniciarSimulacion(): void
+            - generarLlegadaCliente(): void
+            - asignarClienteACaja(): void
+            - atenderCajas(): void
+            - mostrarEstado(): void
+        }
+
+        class Supermercado {
+            - cajas: Caja[]
+            - cola: Cola
+            - PROBABILIDAD_DE_QUE_LLEGUE_ALGUIEN: double
+            + Supermercado(numeroCajas: int)
+            + añadirClienteACola(): void
+            + intentarPasarClienteACaja(): boolean
+            + atenderCajas(): void
+            + getEstadoCola(): String
+            + getEstadoCajas(): String
+        }
+    end
+
+    subgraph Entidades Base
+        class Caja {
+            - ocupada: boolean
+            - paquetes: int
+            + vacia(): boolean
+            + añadirPaquetes(cantidad: int): void
+            + pasar(): void
+            + atender(): void
+            + getEstado(): String
+        }
+
+        class Cola {
+            - cantidad: int
+            + vacia(): boolean
+            + sacar(): void
+            + poner(): void
+            + getCantidad(): int
+            + getEstado(): String
+        }
+
+        class Hora {
+            - horaActual: int
+            - horaFin: int
+            + Hora(inicio: int, fin: int)
+            + terminado(): boolean
+            + avanzar(): void
+            + getEstado(): String
+        }
+    end
+
+    subgraph Utilidades
+        class Utilidades {
+            + doubleAleatorio(): double
+            + aleatorioEntre(rango: int[]): int
+            + limpiarConsola(): void
+            + divisor(x: String): void
+        }
+    end
+
+    class Cliente {
+        + main(args: String[]): void
+    }
+
+    Cliente --> Simulador : crea y inicia
+    Simulador --> Supermercado : gestiona
+    Simulador --> Hora : gestiona
+    Simulador ..> Utilidades : usa
+
+    Supermercado "1" *-- "N" Caja : contiene
+    Supermercado "1" *-- "1" Cola : contiene
+    Supermercado ..> Utilidades : usa
+
+    Cola ..> Caja : (implícitamente)
+    Caja ..> Utilidades : (implícitamente)
