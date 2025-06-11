@@ -1,0 +1,65 @@
+@startuml
+' Definición de clases
+class Caja {
+  - ocupada: boolean
+  - paquetes: int
+  + vacia(): boolean
+  + añadirPaquetes(cantidad: int): void
+  + pasar(): void
+  + mostrar(): void
+  + atender(): void
+}
+
+class Cliente {
+  + main(args: String[]): void
+}
+
+class Cola {
+  - cantidad: int
+  + vacia(): boolean
+  + sacar(caja: Caja): void
+  + poner(): void
+  + mostrar(): void
+}
+
+class Hora {
+  - hora: int
+  - termina: int
+  + Hora(inicio: int, termina: int)
+  + terminado(): boolean
+  + avanzar(): void
+  + mostrar(): void
+}
+
+class Restaurante {
+  - NUMERO_DE_CAJAS: int
+  - PROBABILIDAD_DE_QUE_LLEGUE_ALGUIEN: double
+  - cajas: Caja[]
+  - cola: Cola
+  - hora: Hora
+  + Restaurante()
+  + abrir(): void
+  - imprimirEstado(): void
+  - pasarPersona(): void
+  - llegarPersona(): void
+  - atender(): void
+  - estaAbierto(): boolean
+}
+
+class Utilidades {
+  + doubleAleatorio(): double
+  + aleatorioEntre(rango: int[]): int
+  + limpiarConsola(): void
+  + divisor(x: String): void
+}
+
+' Relaciones
+Cliente --> Restaurante : crea y abre
+Restaurante *-- Caja : contiene (array de Cajas)
+Restaurante *-- Cola : contiene
+Restaurante *-- Hora : contiene
+Restaurante ..> Utilidades : usa
+Cola ..> Caja : saca clientes a caja
+Caja ..> Utilidades : usa (para emojis, aunque no directamente en el código, es una constante)
+
+@enduml
