@@ -4,9 +4,9 @@
 
 ---
 
-## 📝 El Desafío Original: [`enunciado.md`](enunciado.md)
+## 📝 El Desafío Original: [`enunciado.md`](doc/enunciado.md)
 
-Sumérgete en el corazón del problema. El archivo [`enunciado.md`](enunciado.md) detalla el reto original del Centro Comercial CF de El Alisal. Aquí encontrarás:
+Sumérgete en el corazón del problema. El archivo [`enunciado.md`](doc/enunciado.md) detalla el reto original del Centro Comercial CF de El Alisal. Aquí encontrarás:
 
 *   **Requisitos Base**: Cómo se simula la llegada de clientes, el estado de la cola y la atención en cajas.
 *   **Reto Extendido**: Métricas clave al finalizar la jornada, como el número de minutos sin cola, personas atendidas y artículos vendidos.
@@ -82,7 +82,7 @@ classDiagram
     Caja ..> Utilidades : usa
 ```
 
-El archivo [`resumen.puml`](resumen.puml) contiene el código fuente PlantUML de este diagrama, y [`resumen.mmd`](resumen.mmd) contiene el código fuente Mermaid.
+El archivo [`resumen.puml`](doc/resumen.puml) contiene el código fuente PlantUML de este diagrama, y [`resumen.mmd`](doc/resumen.mmd) contiene el código fuente Mermaid.
 
 *   `Caja`: La lógica de atención al cliente.
 *   `Cliente`: El punto de entrada de la simulación.
@@ -184,7 +184,7 @@ classDiagram
     Caja ..> Utilidades : (implícitamente)
 ```
 
-El archivo [`ideas.puml`](ideas.puml) contiene el código fuente PlantUML de este diagrama, y [`ideas.mmd`](ideas.mmd) contiene el código fuente Mermaid.
+El archivo [`ideas.puml`](doc/ideas.puml) contiene el código fuente PlantUML de este diagrama, y [`ideas.mmd`](doc/ideas.mmd) contiene el código fuente Mermaid.
 
 *   **Paquetes Lógicos**: Agrupación de clases en "Simulación", "Entidades Base" y "Utilidades" para una mejor separación de responsabilidades.
 *   **Clase `Simulador`**: Un nuevo orquestador central para gestionar el flujo de la simulación de manera más limpia y extensible.

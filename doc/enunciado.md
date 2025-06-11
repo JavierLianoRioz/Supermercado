@@ -14,7 +14,7 @@ Se tiene calculado que las cajas tardan 1 minuto en atender un pack de items.
 
 |Escenario
 |-|
-|![](/img/Supermercado.png)
+|![](../img/Supermercado.png)
 
 Desarrolle un programa que modele y simule el sistema explicado líneas arriba, teniendo en cuenta las condiciones indicadas.
 
