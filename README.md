@@ -190,7 +190,3 @@ El archivo [`ideas.puml`](doc/ideas.puml) contiene el código fuente PlantUML de
 *   **Clase `Simulador`**: Un nuevo orquestador central para gestionar el flujo de la simulación de manera más limpia y extensible.
 
 Explora estas ideas para visualizar cómo el proyecto podría evolucionar hacia una solución más mantenible y escalable.
-
----
-
-¡Esperamos que esta documentación te sea de gran utilidad para comprender y contribuir a este emocionante proyecto de simulación!
